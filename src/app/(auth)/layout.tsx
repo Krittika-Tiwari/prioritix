@@ -20,7 +20,7 @@ const Layout = ({ children }: AuthLayoutProps) => {
             </Button>
           </div>
         </nav>
-        <div className="flex flex-col items-center justify-center pt-4 md:pt-14 ">
+        <div className="flex flex-col items-center justify-center pt-14 md:pt-14 ">
           {children}
         </div>
       </div>
