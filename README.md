@@ -1,5 +1,6 @@
 # Prioritix
-
+ 
+ 
 ## Overview
 Prioritix is a task management application designed to help you organize, prioritize, and manage your tasks efficiently. Whether you're working on personal projects, team collaborations, or daily to-do lists, Prioritix provides a user-friendly interface to keep you on track.
 
