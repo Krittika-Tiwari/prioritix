@@ -5,8 +5,16 @@ import { createAdminClient } from "@/lib/appwrite";
 
 import { deleteCookie, setCookie } from "hono/cookie";
 import { AUTH_COOKIES } from "../constants";
+import { sessionMiddleware } from "@/lib/session-middleware";
 
 const app = new Hono()
+
+  .get("/current", sessionMiddleware, async (c) => {
+    const user = c.get("user");
+
+    return c.json({ data: user });
+  })
+
   .post("/login", zValidator("json", loginSchema), async (c) => {
     const { email, password } = c.req.valid("json");
     const { account } = await createAdminClient();
@@ -38,12 +46,15 @@ const app = new Hono()
       maxAge: 60 * 60 * 24 * 30,
     });
 
-    console.log({ email, password, name });
     return c.json({ sucess: true });
   })
 
-  .post("/logout", async (c) => {
+  .post("/logout", sessionMiddleware, async (c) => {
+    const account = c.get("account");
+
     deleteCookie(c, AUTH_COOKIES);
+
+    await account.deleteSession("current");
     return c.json({ sucess: true });
   });
 
