@@ -1,7 +1,7 @@
 "use client";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { DootedSeperator } from "@/components/dooted-seperator";
+import { DotedSeperator } from "@/components/doted-seperator";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -26,9 +26,8 @@ import {
 import { registerSchema } from "../schemas";
 import { useRegister } from "../api/use-register";
 
-
 export const SignUPCard = () => {
-  const {mutate} = useRegister()
+  const { mutate, isPending } = useRegister();
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -39,7 +38,7 @@ export const SignUPCard = () => {
   });
 
   const onSubmit = (values: z.infer<typeof registerSchema>) => {
-     mutate({json:values})
+    mutate({ json: values });
   };
 
   return (
@@ -58,7 +57,7 @@ export const SignUPCard = () => {
         </CardDescription>
       </CardHeader>
       <div className="px-7 ">
-        <DootedSeperator />
+        <DotedSeperator />
       </div>
 
       <CardContent className="p-7">
@@ -113,21 +112,21 @@ export const SignUPCard = () => {
                 </FormItem>
               )}
             />
-            <Button disabled={false} size={"lg"} className="w-full">
+            <Button disabled={isPending} size={"lg"} className="w-full">
               Sign Up
             </Button>
           </form>
         </Form>
       </CardContent>
       <div className="px-7 ">
-        <DootedSeperator />
+        <DotedSeperator />
       </div>
       <CardContent className="p-7 flex flex-col gap-y-4">
         <Button
           variant={"secondary"}
           size={"lg"}
           className="w-full"
-          disabled={false}
+          disabled={isPending}
         >
           <FcGoogle className="mr-2 size-5" />
           Sign up with Google
@@ -136,14 +135,14 @@ export const SignUPCard = () => {
           variant={"secondary"}
           size={"lg"}
           className="w-full"
-          disabled={false}
+          disabled={isPending}
         >
           <FaGithub className="mr-2 size-5" />
           Sign up with Github
         </Button>
       </CardContent>
       <div className="px-7">
-        <DootedSeperator />
+        <DotedSeperator />
       </div>
 
       <CardContent className="p-7 flex items-center justify-center">
