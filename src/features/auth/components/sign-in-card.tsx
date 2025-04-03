@@ -2,7 +2,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { z } from "zod";
-import { DotedSeperator } from "@/components/doted-seperator";
+import { DottedSeperator } from "@/components/doted-seperator";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -40,7 +40,7 @@ export const SignInCard = () => {
         <CardTitle className="text-2xl ">Welcome back!</CardTitle>
       </CardHeader>
       <div className="px-7 ">
-        <DotedSeperator />
+        <DottedSeperator />
       </div>
 
       <CardContent className="p-7">
@@ -81,14 +81,14 @@ export const SignInCard = () => {
               )}
             />
 
-            <Button disabled={true} size={"lg"} className="w-full">
+            <Button disabled={isPending} size={"lg"} className="w-full">
               Login
             </Button>
           </form>
         </Form>
       </CardContent>
       <div className="px-7 ">
-        <DotedSeperator />
+        <DottedSeperator />
       </div>
       <CardContent className="p-7 flex flex-col gap-y-4">
         <Button
@@ -111,7 +111,7 @@ export const SignInCard = () => {
         </Button>
       </CardContent>
       <div className="px-7">
-        <DotedSeperator />
+        <DottedSeperator />
       </div>
 
       <CardContent className="p-7 flex items-center justify-center">

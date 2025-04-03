@@ -1,7 +1,7 @@
 "use client";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { DotedSeperator } from "@/components/doted-seperator";
+import { DottedSeperator } from "@/components/doted-seperator";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -57,7 +57,7 @@ export const SignUPCard = () => {
         </CardDescription>
       </CardHeader>
       <div className="px-7 ">
-        <DotedSeperator />
+        <DottedSeperator />
       </div>
 
       <CardContent className="p-7">
@@ -119,7 +119,7 @@ export const SignUPCard = () => {
         </Form>
       </CardContent>
       <div className="px-7 ">
-        <DotedSeperator />
+        <DottedSeperator />
       </div>
       <CardContent className="p-7 flex flex-col gap-y-4">
         <Button
@@ -142,7 +142,7 @@ export const SignUPCard = () => {
         </Button>
       </CardContent>
       <div className="px-7">
-        <DotedSeperator />
+        <DottedSeperator />
       </div>
 
       <CardContent className="p-7 flex items-center justify-center">
